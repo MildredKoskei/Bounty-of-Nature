@@ -1,82 +1,137 @@
 body {
     background: linear-gradient(to top, #49a8ac 0%, #c1c3d3 100%);
+    padding: 10px 2px 0px 2px;
+    margin: 0;
 }
 h1{
     font-weight: bold;
     text-align: center;
 }
-h2 {
+h3   {
     text-align: center;
 }
-
-
-
-.slideshow-container{
-    max-width:1000px;
-    position: relative;
-    margin: auto;
-}
-.mySlides{
-    display:none;
-}
-.prev, .next{
-    cursor: pointer;
-    position:absolute;
-    top:50%;
-    width:auto;
-    margin-top:-22px;
-    padding:16px;
-    color:black;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-
-}
-.next {
-    right:0;
-    border-radius: 3px 0 0 3px;
-}
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
+ .container {
     width: 100%;
-   text-align: center;
+    height: 600px;
+    max-width: 1000px;
+    user-select: none;
+    box-shadow: 0px 0px 3px 1px #00000080;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
+.container .slideContainer{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    position:relative;
 
-.active, .dot:hover {
+}
+
+.container .slideContainer .imageHolder{
+    width:100%;
+    height:100%;
+    position: absolute;
+    opacity: 0;
+}
+.container .slideContainer .imageHolder img{
+    width:100%;
+    height: 100%;
+
+}
+.container .slideContainer .imageHolder .captionText{
+    display: none;
+
+}
+.container .slideContainer .leftArrow,  .container .slideContainer .rightArrow { 
+    width:50px;
+    background: #00000036;
+    position:absolute;
+    left: 0; 
+    z-index: 1;
+    transition: background 0.5s;
+    height: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+} 
+.container .slideContainer .rightArrow{
+    left:auto;
+    right: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.container .slideContainer .leftArrow:hover{
+    background: #000000a8;
+    cursor: pointer;
+}
+.container .slideContainer .rightArrow:hover{
+    background:#000000a8;
+    cursor:pointer;
+}
+.container .slideContainer .arrow{
+    display:inline-block;
+    border : 3px solid white;
+    width: 10px;
+    height: 10px;
+    border-left: none;
+    border-bottom: none;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.container .slideContainer .arrow.arrowLeft{
+    transform: rotateZ(-135deg);
+}
+.container .slideContainer .arrow.arrowRight{
+    transform: rotateZ(45deg);
+}
+.container .slideContainer .captionHolder{
+    position:absolute;
+    bottom: 0;
+    z-index: 1;
+    color:white;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align:center;
+    width: 100%;
+    background: #00000038;
+    line-height: 50px;
+    overflow:hidden;
+}
+.container .slideContainer .captionHolder .captionText{
+    margin: 0;
+
+}
+.container #dotsContainer{
+    width:100% ;
+    height:  10%;
+    text-align: center;
+    padding-top:20px;
+    box-sizing:border-box; 
+
+}
+.container #dotsContainer .dots{
+    display:inline-block;
+    width:15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left:10px;
+    background-color:#bbb;
+    cursor: pointer; 
+    transition: background-color 0.5s;
+}
+.container #dotsContainer .dots:hover,.container #dotsContainer .dots.active{
     background-color: #717171;
-  }
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
+}
+
+
+
+
